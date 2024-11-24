@@ -95,7 +95,7 @@ alert:
   on_set:
     reset_interval: 1
     update_threshold: 2
-    format: "変数 <var> の更新回数が閾値 (<update_threshold> 回) を超えました (現在: <updates_count> 回 / <reset_interval> 秒)"
+    format: "変数 <key> の更新回数が閾値 (<threshold> 回) を超えました (現在: <count> 回 / <interval> 秒)"
     output_log: false
   on_del:
     reset_interval: 1

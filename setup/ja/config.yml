@@ -1,5 +1,4 @@
 lang: ja
-# project_id: 1099396857
 project_id: 843162693
 
 colors:
@@ -12,7 +11,6 @@ colors:
   success: "92m" # bright green
   critical: "95m" # magenta
   note: "35m" # purple
-  yellow: "220m"
 
 logs:
   timestamp: true
@@ -39,48 +37,48 @@ logs:
 console:
   log:
     color:
-      level: '<log>'
-      message: '@none'
-      timestamp: '@none'
+      level: "<log>"
+      message: "@none"
+      timestamp: "@none"
     format: "<level> <timestamp> <message>"
   info:
     color:
-      level: '<info>'
-      message: '@none'
-      timestamp: '@none'
+      level: "<info>"
+      message: "@none"
+      timestamp: "@none"
     format: "<level> <timestamp> <message>"
   warning:
     color:
-      level: '<warning>'
-      message: '<warning>'
-      timestamp: '<warning>'
+      level: "<warning>"
+      message: "<warning>"
+      timestamp: "<warning>"
     format: "<level> <timestamp> <message>"
   error:
     color:
-      level: '<error>'
-      message: '<error>'
-      timestamp: '<error>'
+      level: "<error>"
+      message: "<error>"
+      timestamp: "<error>"
     format: "<level> <timestamp> <message>"
   debug:
     color:
-      level: '<debug>'
-      message: '@none'
-      timestamp: '@none'
+      level: "<debug>"
+      message: "@none"
+      timestamp: "@none"
     format: "<level> <timestamp> <message>"
 
 alert:
   on_set:
-    reset_interval: 1 # リセット間隔
-    update_threshold: 5 # 許容回数
+    reset_interval: 1
+    update_threshold: 2
+    format: "変数 <key> の更新回数が閾値 (<threshold> 回) を超えました (現在: <count> 回 / <interval> 秒)"
     output_log: false
-    format: "Event <event_type> by <key> exceeded the threshold (<threshold> times). Current: <count> times in <interval> seconds"
   on_del:
     reset_interval: 1
     update_threshold: 1
+    format: "イベント <event_type> による <key> が閾値 (<threshold> 回) を超えました (現在: <count> 回 / <interval> 秒)"
     output_log: false
-    format: "Event <event_type> by <key> exceeded the threshold (<threshold> times). Current: <count> times in <interval> seconds"
   on_create:
     reset_interval: 1
     update_threshold: 1
+    format: "イベント <event_type> による <key> が閾値 (<threshold> 回) を超えました (現在: <count> 回 / <interval> 秒)"
     output_log: false
-    format: "Event <event_type> by <key> exceeded the threshold (<threshold> times). Current: <count> times in <interval> seconds"
