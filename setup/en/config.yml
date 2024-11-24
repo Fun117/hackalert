@@ -1,0 +1,41 @@
+lang: en
+project_id: 843162693
+
+colors:
+  reset: "0m" # default
+  log: "36m" # cyan
+  info: "32m" # green
+  warning: "33m" # yellow
+  error: "31m" # red
+  debug: "34m" # blue
+  success: "92m" # bright green
+  critical: "95m" # magenta
+  note: "35m" # purple
+
+logs:
+  timestamp: true
+  output:
+    directory: ./logs
+    format: "<level> <timestamp> <message>"
+  on_set:
+    format: "Variable <var> was set to the value <value> at <timestamp>"
+  on_del:
+    format: "<user> deleted variable <var>"
+  on_create:
+    format: "<user> created variable <var>"
+  on_ready:
+    message: "Event listener ready!"
+
+console:
+  set_color:
+    level: "@auto"
+    timestamp: "<log>"
+    message: "@none"
+  format: "<level> <timestamp> <message>"
+
+alert:
+  on_set:
+    reset_interval: 1
+    update_threshold: 2
+    format: "The number of updates for variable <var> has exceeded the threshold (<update_threshold> updates) (Current: <updates_count> updates / <reset_interval> second)"
+    output_log: false
